@@ -13,15 +13,15 @@ There's also [a docker image](https://hub.docker.com/r/devexpress/bootstrap-aspn
   - dotnet restore
   - dotnet run
 
-## A Boilerplate-only Option
-
-If you would prefer to delete sample files from this project remove the following files and folders: `Controllers/SampleController.cs`, `Data`, `Models/NorthwindContext.cs`, `Models/Person.cs`, `Views/Sample`.
-
 ## Run in Docker
 
 1. [Get Docker](https://docs.docker.com/engine/installation/)
 2. docker run --rm -ti -p 5000:80 devexpress/bootstrap-aspnetcore-starter
 3. Navigate to http://localhost:5000
+
+## A Boilerplate-only Option
+
+If you would prefer to delete sample files from this project remove the following files and folders: `Controllers/SampleController.cs`, `Data`, `Models/NorthwindContext.cs`, `Models/Person.cs`, `Views/Sample`.
 
 ## Online demos
 
