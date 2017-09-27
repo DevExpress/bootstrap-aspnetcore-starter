@@ -10,8 +10,8 @@ There's also [a docker image](https://hub.docker.com/r/devexpress/bootstrap-aspn
 2. Download the demo project. 
 3. Open the project's root folder.
 4. Open Console and type the following commands in it:
-  - dotnet restore
-  - dotnet run
+   - dotnet restore
+   - dotnet run
  
 ## Run in Docker 
 1. [Get Docker](https://docs.docker.com/engine/installation/)
