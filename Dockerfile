@@ -15,6 +15,6 @@ WORKDIR /app
 
 COPY --from=builder /app .
 
-COPY --from=builder /sources/App_Data App_Data
+COPY --from=builder /sources/Data Data
 
 ENTRYPOINT ["dotnet", "bootstrap-starter.dll"]
