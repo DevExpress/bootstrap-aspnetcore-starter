@@ -1,0 +1,113 @@
+@font-face {
+    font-family: demo-icons;
+    src: url("../fonts/demo-icons/demo-icons.eot");
+    src: url("../fonts/demo-icons/demo-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/demo-icons/demo-icons.woff2") format("woff2"), url("../fonts/demo-icons/demo-icons.woff") format("woff"), url("../fonts/demo-icons/demo-icons.ttf") format("truetype"), url("../fonts/demo-icons/demo-icons.svg#demo-icons") format("svg");
+    font-style: normal;
+    font-weight: normal;
+}
+
+.icon {
+    display: inline-block;
+    text-rendering: auto;
+    font-family: "demo-icons"!important;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+.icon:before {
+    vertical-align: top;
+}
+
+.icon-1ic::before {
+    content: "\e001";
+}
+
+.icon-2ic::before {
+    content: "\e002";
+}
+
+.icon-3ic::before {
+    content: "\e003";
+}
+
+.icon-4ic::before {
+    content: "\e004";
+}
+
+.icon-5ic::before {
+    content: "\e005";
+}
+
+.icon-6ic::before {
+    content: "\e006";
+}
+
+.icon-buy::before {
+    content: "\e007";
+}
+
+.icon-chart::before {
+    content: "\e008";
+}
+
+.icon-coll::before {
+    content: "\e009";
+}
+
+.icon-download::before {
+    content: "\e00a";
+}
+
+.icon-editors::before {
+    content: "\e00b";
+}
+
+.icon-exp::before {
+    content: "\e00c";
+}
+
+.icon-form::before {
+    content: "\e00d";
+}
+
+.icon-gettingstarted::before {
+    content: "\e00e";
+}
+
+.icon-grid::before {
+    content: "\e00f";
+}
+
+.icon-link::before {
+    content: "\e010";
+}
+
+.icon-Logo::before {
+    content: "\e011";
+}
+
+.icon-menu::before {
+    content: "\e012";
+}
+
+.icon-nav::before {
+    content: "\e013";
+}
+
+.icon-right_arr::before {
+    content: "\e014";
+}
+
+.icon-search::before {
+    content: "\e015";
+}
+
+.icon-settings::before {
+    content: "\e016";
+}
+
+.icon-x::before {
+    content: "\e017";
+}

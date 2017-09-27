@@ -1,0 +1,8 @@
+﻿@{
+    ViewData["Title"] = "Bootstrap GridView Control";
+}
+@model IEnumerable<Invoice>
+
+@using (Html.BeginForm(method: FormMethod.Post)) {
+    @Html.Partial("GridViewPartial", Model)
+}

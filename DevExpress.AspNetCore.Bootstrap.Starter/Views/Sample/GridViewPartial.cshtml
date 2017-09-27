@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Invoice>
+
+@(Html.DevExpress()
+    .BootstrapGridView<Invoice>("GridView")
+    .KeyFieldName(k => k.OrderID, k => k.ProductID)
+    .Columns(columns => {
+        columns.AddCommandColumn()
+            .ShowEditButton(true)
+            .ShowNewButtonInHeader(true)
+            .ShowDeleteButton(true);
+        columns.Add(m => m.ProductName);
+        columns.AddSpinEditColumn(m => m.UnitPrice);
+        columns.AddSpinEditColumn(m => m.Quantity);
+        columns.Add(m => m.Discount);
+        columns
+           .AddTextColumn()
+           .FieldName("Total")
+           .ReadOnly(true)
+           .UnboundType(DevExpress.Data.UnboundColumnType.Decimal)
+           .UnboundExpression("UnitPrice * Quantity * (1 - Discount)")
+           .PropertiesTextEdit(properties => properties.DisplayFormatString("c"));
+    })
+    .Settings(settings => settings.ShowHeaderFilterButton(true))
+    .EditErrorText(ViewData["Error"]?.ToString())
+    .Routes(routes => routes
+       .MapRoute(r => r
+           .Action("GridViewPartial")
+           .Controller("Sample"))
+       .MapRoute(r => r
+           .RouteType(GridViewRouteType.UpdateRow)
+           .Action("UpdateRow")
+           .Controller("Sample"))
+
+       .MapRoute(r => r
+           .RouteType(GridViewRouteType.AddRow)
+           .Action("AddNewRow")
+           .Controller("Sample"))
+       .MapRoute(r => r
+           .RouteType(GridViewRouteType.DeleteRow)
+           .Action("DeleteRow")
+           .Controller("Sample")))
+    .Bind(Model))
