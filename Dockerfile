@@ -17,4 +17,6 @@ COPY --from=builder /app .
 
 COPY --from=builder /sources/Data Data
 
+EXPOSE 5000
+
 ENTRYPOINT ["dotnet", "bootstrap-starter.dll"]
