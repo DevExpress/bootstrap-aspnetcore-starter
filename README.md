@@ -25,7 +25,7 @@ If you would prefer to delete sample data from this project, remove the followin
  
 ## Online demos
  
-Visit the [ASP.NET Core Bootstrap demos](https://demos.devexpress.com/aspnetcore-bootstrap) to see what components are already available. Use them in the attached sample project to see how they work on your side. 
+Visit our [ASP.NET Core Bootstrap demos](https://demos.devexpress.com/aspnetcore-bootstrap) to see what components are already available. Use them in the attached sample project to see how they work on your side. 
  
 ## Provide feedback
  
