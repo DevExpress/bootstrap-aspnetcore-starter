@@ -1,8 +1,8 @@
 FROM microsoft/aspnetcore-build:2.0.0 AS builder
 
-ADD DevExpress.AspNetCore.Bootstrap.Starter /DevExpress.AspNetCore.Bootstrap.Starter
+ADD . /sources
 
-WORKDIR /DevExpress.AspNetCore.Bootstrap.Starter
+WORKDIR /sources
 
 RUN dotnet restore
 
@@ -15,6 +15,6 @@ WORKDIR /app
 
 COPY --from=builder /app .
 
-COPY --from=builder /DevExpress.AspNetCore.Bootstrap.Starter/App_Data App_Data
+COPY --from=builder /sources/App_Data App_Data
 
-ENTRYPOINT ["dotnet", "DevExpress.AspNetCore.Bootstrap.Starter.dll"]
+ENTRYPOINT ["dotnet", "bootstrap-starter.dll"]
