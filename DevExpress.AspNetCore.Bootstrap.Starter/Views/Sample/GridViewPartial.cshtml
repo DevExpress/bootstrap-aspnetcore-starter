@@ -1,24 +1,26 @@
-﻿@model IEnumerable<Invoice>
+﻿@model IEnumerable<Product>
 
 @(Html.DevExpress()
-    .BootstrapGridView<Invoice>("GridView")
-    .KeyFieldName(k => k.OrderID, k => k.ProductID)
+    .BootstrapGridView<Product>("GridView")
+    .KeyFieldName(m => m.ProductID)
     .Columns(columns => {
         columns.AddCommandColumn()
             .ShowEditButton(true)
             .ShowNewButtonInHeader(true)
             .ShowDeleteButton(true);
         columns.Add(m => m.ProductName);
-        columns.AddSpinEditColumn(m => m.UnitPrice);
-        columns.AddSpinEditColumn(m => m.Quantity);
-        columns.Add(m => m.Discount);
+        columns.Add(m => m.QuantityPerUnit);
+        columns.Add(m => m.UnitPrice);
+        columns.Add(m => m.UnitsInStock);
         columns
            .AddTextColumn()
-           .FieldName("Total")
+           .FieldName("TotalPrice")
            .ReadOnly(true)
            .UnboundType(DevExpress.Data.UnboundColumnType.Decimal)
-           .UnboundExpression("UnitPrice * Quantity * (1 - Discount)")
-           .PropertiesTextEdit(properties => properties.DisplayFormatString("c"));
+           .UnboundExpression("UnitPrice * UnitsInStock")
+           .PropertiesTextEdit(properties => properties.DisplayFormatString("c"))
+           .SettingsEditForm(editForm => editForm.Visible(DevExpress.Utils.DefaultBoolean.False));
+        columns.Add(m => m.Discontinued);
     })
     .Settings(settings => settings.ShowHeaderFilterButton(true))
     .EditErrorText(ViewData["Error"]?.ToString())
@@ -30,7 +32,6 @@
            .RouteType(GridViewRouteType.UpdateRow)
            .Action("UpdateRow")
            .Controller("Sample"))
-
        .MapRoute(r => r
            .RouteType(GridViewRouteType.AddRow)
            .Action("AddNewRow")

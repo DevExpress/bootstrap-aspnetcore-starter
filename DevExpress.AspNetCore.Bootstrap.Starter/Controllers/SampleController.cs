@@ -1,9 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 
 namespace DevExpress.AspNetCore.Bootstrap.Starter {
     public class SampleController : Controller {
-        NorthwindContext context;
+
+        public SampleController(NorthwindContext context) {
+            NorthwindContext = context;
+        }
+
+        protected NorthwindContext NorthwindContext { get; }
+
+
         public IActionResult RegisterForm() {
             return View();
         }
@@ -13,53 +21,46 @@ namespace DevExpress.AspNetCore.Bootstrap.Starter {
                 ViewData["Message"] = "Thank you for registering!";
             return View(person);
         }
+
         public IActionResult GridView() {
-            return View(context.Invoices);
+            return View(NorthwindContext.Products);
         }
         public IActionResult GridViewPartial() {
-            return PartialView(context.Invoices);
+            return PartialView(NorthwindContext.Products);
         }
-        public IActionResult UpdateRow(Invoice invoice) {
+        public IActionResult AddNewRow(Product product) {
             try {
                 if(ModelState.IsValid) {
-                    context.Invoices.Update(invoice);
-                    context.SaveChanges();
+                    product.ProductID = NorthwindContext.Products.Max(p => p.ProductID) + 1;
+                    NorthwindContext.Products.Add(product);
+                    NorthwindContext.SaveChanges();
                 }
-            }
-            catch(Exception e) {
+            } catch(Exception e) {
                 ViewData["error"] = e.Message;
             }
-            return PartialView("GridViewPartial", context.Invoices);
+            return PartialView("GridViewPartial", NorthwindContext.Products);
         }
-        public IActionResult AddNewRow(Invoice invoice) {
+        public IActionResult UpdateRow(Product product) {
             try {
                 if(ModelState.IsValid) {
-                    context.Invoices.Add(invoice);
-                    context.SaveChanges();
+                    NorthwindContext.Products.Update(product);
+                    NorthwindContext.SaveChanges();
                 }
-            }
-            catch(Exception e) {
+            } catch(Exception e) {
                 ViewData["error"] = e.Message;
             }
-            return PartialView("GridViewPartial", context.Invoices);
+            return PartialView("GridViewPartial", NorthwindContext.Products);
         }
-        public IActionResult DeleteRow(long id) {
+        public IActionResult DeleteRow(int productID = -1) {
+            var product = NorthwindContext.Products
+                .FirstOrDefault(i => i.ProductID == productID);
             try {
-                if(ModelState.IsValid) {
-                    Invoice invoice = context.Invoices.Find(id);
-                    if(invoice != null) {
-                        context.Invoices.Remove(invoice);
-                    }
-                    context.SaveChanges();
-                }
-            }
-            catch(Exception e) {
+                NorthwindContext.Products.Remove(product);
+                NorthwindContext.SaveChanges();
+            } catch(Exception e) {
                 ViewData["error"] = e.Message;
             }
-            return PartialView("GridViewPartial", context.Invoices);
-        }
-        public SampleController(NorthwindContext context) {
-            this.context = context;
+            return PartialView("GridViewPartial", NorthwindContext.Products);
         }
     }
 }

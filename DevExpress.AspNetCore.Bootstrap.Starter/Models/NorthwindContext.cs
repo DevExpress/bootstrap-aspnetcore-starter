@@ -6,22 +6,21 @@ namespace DevExpress.AspNetCore.Bootstrap.Starter {
         public NorthwindContext(DbContextOptions<NorthwindContext> options)
             : base(options) {
         }
-        public DbSet<Invoice> Invoices { get; set; }
-        protected override void OnModelCreating(ModelBuilder modelBuilder) {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Invoice>()
-                .HasKey(t => new { t.OrderID, t.ProductID, t.ProductName, t.UnitPrice, t.Quantity, t.Discount });
-        }
+
+        public DbSet<Product> Products { get; set; }
     }
-    public partial class Invoice {
+
+    public class Product {
+        [Key]
         public int ProductID { get; set; }
-        public int OrderID { get; set; }
-        [MaxLength(40)]
+        [Required, MaxLength(40)]
         public string ProductName { get; set; }
+        [MaxLength(20)]
+        public string QuantityPerUnit { get; set; }
         [DisplayFormat(DataFormatString = "c")]
-        public decimal UnitPrice { get; set; }
-        public short Quantity { get; set; }
-        [DisplayFormat(DataFormatString = "p")]
-        public float Discount { get; set; }
+        public decimal? UnitPrice { get; set; }
+        public short? UnitsInStock { get; set; }
+        public short? UnitsOnOrder { get; set; }
+        public bool Discontinued { get; set; }
     }
 }
