@@ -15,7 +15,7 @@ There's also [a docker image](https://hub.docker.com/r/devexpress/bootstrap-aspn
  
 ## Run in Docker 
 1. [Get Docker](https://docs.docker.com/engine/installation/)
-2. docker run --rm -ti -p 5000:80 devexpress/bootstrap-aspnetcore-starter
+2. docker run --rm -ti -p 5000:5000 devexpress/bootstrap-aspnetcore-starter
 3. Navigate to http://localhost:5000
  
 ## A Boilerplate-only Option 
