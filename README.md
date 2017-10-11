@@ -1,6 +1,6 @@
 # DevExpress ASP.NET Core Bootstrap starter project
  
-This project demonstrates how to use our new set of controls for the new ASP.NET Core 2.0 framework, which we have recently [announced](https://community.devexpress.com/blogs/aspnet/archive/2017/09/26/new-bootstrap-controls-for-asp-net-core-2-0-alpha-release-will-you-help-us-test-them-please.aspx). This project contains a simple Registration form and GridView that supports data editing. You can use the project to get started with your next ASP.NET Core project (see *A Boilerplate-only Option* for details). All required DevExpress references are already included. 
+This project demonstrates how to use our new set of controls for the new ASP.NET Core 2.0 framework, which we have recently [announced](https://community.devexpress.com/blogs/aspnet/archive/2017/10/10/new-bootstrap-controls-for-asp-net-core-2-0-ctp-release-join-the-pre-release-party.aspx). This project contains a simple Registration form and GridView that supports data editing. You can use the project to get started with your next ASP.NET Core project (see *A Boilerplate-only Option* for details). All required DevExpress references are already included. 
  
 There's also [a docker image](https://hub.docker.com/r/devexpress/bootstrap-aspnetcore-starter) that contains this project running on Ubuntu!
  
