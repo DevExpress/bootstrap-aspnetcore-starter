@@ -19,7 +19,7 @@
            .UnboundType(DevExpress.Data.UnboundColumnType.Decimal)
            .UnboundExpression("UnitPrice * UnitsInStock")
            .PropertiesTextEdit(properties => properties.DisplayFormatString("c"))
-           .SettingsEditForm(editForm => editForm.Visible(DevExpress.Utils.DefaultBoolean.False));
+           .SettingsEditForm(editForm => editForm.Visible(false));
         columns.Add(m => m.Discontinued);
     })
     .Settings(settings => settings.ShowHeaderFilterButton(true))
