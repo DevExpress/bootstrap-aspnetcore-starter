@@ -7,15 +7,15 @@ There's also [a docker image](https://hub.docker.com/r/devexpress/bootstrap-aspn
  
 ## Getting Started
 1. Download and install [.NET Core 2.0 SDK](https://www.microsoft.com/net/download/core).
-2. Download the demo project. 
+2. Clone the demo project. 
 3. Open the project's root folder.
 4. Open Console and type the following commands in it:
-   - dotnet restore
-   - dotnet run
+   - `dotnet restore`
+   - `dotnet run`
  
 ## Run in Docker 
 1. [Get Docker](https://docs.docker.com/engine/installation/)
-2. docker run --rm -ti -p 5000:5000 devexpress/bootstrap-aspnetcore-starter
+2. `docker run --rm -ti -p 5000:5000 devexpress/bootstrap-aspnetcore-starter`
 3. Navigate to http://localhost:5000
  
 ## A Boilerplate-only Option 
