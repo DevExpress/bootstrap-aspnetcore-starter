@@ -12,10 +12,26 @@ There's also [a docker image](https://hub.docker.com/r/devexpress/bootstrap-aspn
 4. Open Console and type the following commands in it:
    - `dotnet restore`
    - `dotnet run`
- 
+5. Open the NuGet.config file:
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <packageSources>
+        <add key="DevExpress" value="https://nuget.devexpress.com/[your_devexpress_authorization_key]/api/" />
+    </packageSources>
+</configuration>
+```
+replace the `[your_devexpress_authorization_key]` section with your [DevExpress NuGet](https://www.devexpress.com/Support/Center/Question/Details/T466415/devexpress-nuget-packages) feed authorization key that you can find in the [Download Manager](https://www.devexpress.com/ClientCenter/DownloadManager/).
+ 
 ## Run in Docker 
 1. [Get Docker](https://docs.docker.com/engine/installation/)
-2. `docker run --rm -ti -p 5000:5000 devexpress/bootstrap-aspnetcore-starter`
+2. Clone the demo project.
+3. Add your [DevExpress NuGet](https://www.devexpress.com/Support/Center/Question/Details/T466415/devexpress-nuget-packages) feed authorization key. See #5 in the [Getting Started](#getting-started) section above. 
+4. Bind your Docker account to your GitHub account. See [this document](https://docs.docker.com/docker-hub/github/#linking-docker-hub-to-a-github-account) for details.
+5. Create an [Automated build](https://docs.docker.com/docker-hub/builds/#create-an-automated-build) with the "bootstrap-aspnetcore-starter" name.
+6. After the application is successfully built, run a local Docker image using the following command:
+`docker run --rm -ti -p 5000:5000 [yuor_docker_account]/bootstrap-aspnetcore-starter`
+replace the `[your_docker_account]` section with your own Docker account name. 
 3. Navigate to http://localhost:5000
  
 ## A Boilerplate-only Option 
