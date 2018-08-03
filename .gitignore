@@ -1,6 +1,7 @@
-
 #Ignore thumbnails created by Windows
 Thumbs.db
+#Ignore files built by JetBrains Rider
+.idea/
 #Ignore files built by Visual Studio
 *.obj
 *.exe
@@ -23,6 +24,7 @@ Thumbs.db
 [Dd]ebug*/
 *.lib
 *.sbr
+*.sln
 obj/
 [Rr]elease*/
 _ReSharper*/
