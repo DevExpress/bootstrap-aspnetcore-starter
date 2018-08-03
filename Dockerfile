@@ -1,22 +1,13 @@
-FROM microsoft/aspnetcore-build:2.0.0 AS builder
-
-ADD . /sources
-
-WORKDIR /sources
-
-RUN dotnet restore
-
-RUN dotnet publish --output /app/ --configuration Release
-
-
-FROM microsoft/aspnetcore:2.0.0
-
+FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /app
 
-COPY --from=builder /app .
+COPY . ./aspnetapp/
+WORKDIR /app/aspnetapp
+RUN dotnet restore bootstrap-starter.csproj
+RUN dotnet publish bootstrap-starter.csproj -c Release -o out
 
-COPY --from=builder /sources/Data Data
 
-EXPOSE 5000
-
+FROM microsoft/dotnet:2.1-aspnetcore-runtime AS runtime
+WORKDIR /app
+COPY --from=build /app/aspnetapp/out ./
 ENTRYPOINT ["dotnet", "bootstrap-starter.dll"]
