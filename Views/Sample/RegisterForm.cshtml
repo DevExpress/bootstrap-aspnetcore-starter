@@ -3,12 +3,12 @@
 @{
     ViewData["Title"] = "Bootstrap Editors";
 }
-    <div class="overview-form">
+    <div>
     @if(ViewData["Message"] != null) {
         <h3 class="text-success">@ViewData["Message"] </h3>
     }
     else {
-        @using(Html.BeginForm(FormMethod.Post)) {
+        using(Html.BeginForm(FormMethod.Post)) {
             <div class="form-group">
                 @(Html.DevExpress()
                     .BootstrapTextBoxFor(m => m.UserName))
