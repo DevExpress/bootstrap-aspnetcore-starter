@@ -4,6 +4,8 @@ This project demonstrates how to use our set of controls for the ASP.NET Core 2.
  
 There's also [a docker image](https://hub.docker.com/r/devexpress/bootstrap-aspnetcore-starter) that contains this project running on Ubuntu!
  
+## Bootstrap Controls for ASP.NET Core are in maintenance mode
+We don’t add new controls or develop new functionality for this product line. If you are starting a new ASP.NET Core project, use our [ASP.NET Core Controls](https://demos.devexpress.com/aspnetcore/) instead.
  
 ## Getting Started
 1. Download and install [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/core).
