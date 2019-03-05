@@ -1,12 +1,13 @@
 # DevExpress ASP.NET Core Bootstrap starter project
  
-This project demonstrates how to use our set of controls for the ASP.NET Core 2.1 framework. This project contains a simple Registration form and GridView that supports data editing. You can use the project to get started with your next ASP.NET Core project (see *A Boilerplate-only Option* for details). All required DevExpress references are already included. 
- 
+**Bootstrap Controls for ASP.NET Core are in maintenance mode.** We don’t add new controls or develop new functionality for this product line. If you are starting a new ASP.NET Core project, use our **[ASP.NET Core Controls](https://demos.devexpress.com/aspnetcore/)** instead.
+
+This starter project demonstrates how to use this set of controls in the ASP.NET Core 2.1 framework. The project contains a simple Registration form and GridView that supports data editing. All required DevExpress references are already included.
+
+
 There's also [a docker image](https://hub.docker.com/r/devexpress/bootstrap-aspnetcore-starter) that contains this project running on Ubuntu!
  
-## Bootstrap Controls for ASP.NET Core are in maintenance mode
-We don’t add new controls or develop new functionality for this product line. If you are starting a new ASP.NET Core project, use our [ASP.NET Core Controls](https://demos.devexpress.com/aspnetcore/) instead.
- 
+
 ## Getting Started
 1. Download and install [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/core).
 2. Clone the demo project. 
@@ -24,7 +25,7 @@ We don’t add new controls or develop new functionality for this product line. 
 If you would prefer to delete sample data from this project, remove the following files and folders: `Controllers/SampleController.cs`, `Data`, `Models/NorthwindContext.cs`, `Models/Person.cs`, `Views/Sample`.
  
 ## Online demos 
-Visit our [ASP.NET Core Bootstrap demos](https://demos.devexpress.com/aspnetcore-bootstrap) to see what components are already available. Use them in the attached sample project to see how they work on your side. 
+Visit our [ASP.NET Core Bootstrap demos](https://demos.devexpress.com/aspnetcore-bootstrap) to see what components are available. Use them in the attached sample project to see how they work on your side. 
  
 ## Provide feedback 
 Please provide us with feedback via the [DevExpress Support Center](https://www.devexpress.com/Support/Center/Question/Create).
